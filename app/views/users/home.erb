@@ -3,7 +3,9 @@
   <h1>Welcome to Leaf-Out</h1>
 
 </div>
-
+<%= if current_user.id == @user.id
+button_to "Account", current_user_path , method: :get 
+end%>
 <div class="container text-center">
   <div class="rounded">
       <%= image_tag "home/original.png", :class => "img-fluid w-75" %>
