@@ -1,3 +1,31 @@
 
  <h2><%= @garden.garden_name %></h2>
- <hr>
+
+ <p><%= @garden.user.username %></p>
+ 
+<div class="headerNav">
+    <%=button_to "Seed",new_plant_path, method: :get %>
+</div>
+
+<% if @garden.plant_population %>
+   Current Plant Population:<%= @garden.plant_pop %>
+  <% else %>
+  <h4>Add Some Plants!</h4>
+<% end %>
+
+<hr>
+<hr>
+<div class="plant">
+
+<% @garden.plants.each do |p|%>
+
+   <%= link_to p.plant_type, p %> || <%= p.nickname %> 
+   <br>
+     <%= button_to "RIP", p, method: :delete %>
+ 
+<% end %>
+
+ </div>
+
+
+

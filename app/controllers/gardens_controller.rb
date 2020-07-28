@@ -6,11 +6,11 @@ class GardensController < ApplicationController
 
     private
 
-    def garden_params
-        # waterammount <<< new spelling
-        # needs to have nested attributes for plant
-        params.require(:garden).permit(:garden_name,:plant_pop)
-    end
+    # def garden_params
+    #     # waterammount <<< new spelling
+    #     # needs to have nested attributes for plant
+    #     params.require(:garden).permit(:garden_name,:plant_pop)
+    # end
   
 
 end
