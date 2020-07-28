@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/settings', to: "users#settings", as: "settings"
   root 'newleaf#landing'
 
-  get '/garden', to: 'gardens#garden'
+  get '/gardens', to: 'gardens#mygarden', as: "mygarden"
   # get 'garden', to: 'gardens#garden'
 
   # get 'garden', to: 'gardens#show'
