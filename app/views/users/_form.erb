@@ -4,8 +4,10 @@
 <br>
 <%= f.label :password %>
 <%= f.text_field :password %>
+<br>
 <%= f.label :password_confirmation %>
 <%= f.text_field :password_confirmation %>
+<br>
 <%= f.fields_for :gardens do |g| %>
 <%= g.label :garden_name %>
 <%= g.text_field :garden_name  %>

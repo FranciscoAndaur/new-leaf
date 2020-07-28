@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @error = flash[:error]
+    @errors = flash[:errors]
     render :new
   end
     
@@ -29,18 +29,24 @@ class UsersController < ApplicationController
         redirect_to home_path(@user)
 
       else 
-        flash[:error]= @user.errors.full_messages
+        flash[:errors] = @user.errors.full_messages
         redirect_to new_user_path
     end
   end
 
-  def update
+  def settings
 
+  end
+
+  def update
+    password = params[:password]
+    @user = User.update(user_params)
+    redirect_to user_path(@user)
   end
 
   def destroy
     @user.destroy
-    redirect_to :new_user_path
+    redirect_to new_user_path
   end
   
   private
