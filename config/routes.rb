@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
+  get '/register', to: 'users#create'
   get 'sessions/create'
   get 'sessions/destroy'
   resources :completion_dates

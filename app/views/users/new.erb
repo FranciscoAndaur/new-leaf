@@ -1,0 +1,7 @@
+<h1> SIGN UP </h1>
+<font size="+1" face="Comic Sans MS"><% if @errors%>
+<% @errors.each do |err| %>
+<%= err %><br>
+<% end%>
+<% end%>
+<%= render "form" %>
