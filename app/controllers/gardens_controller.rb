@@ -2,13 +2,10 @@ class GardensController < ApplicationController
 
     def garden
         # should show the user their garden if they have one
-        byebug
        @garden = Garden.find_by(user_id: current_user.id)
         #other wise create new garden
-        byebug
         if !!@garden
-            byebug
-            redirect_to garden_path
+            render @garden
         else
             # page rendered says you currently have no plants in your garden
             # maybe have a garden created as you sign up
