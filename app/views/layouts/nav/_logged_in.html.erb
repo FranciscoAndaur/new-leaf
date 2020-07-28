@@ -1,4 +1,31 @@
 <%# view buttons for garden=> users plants, log out, "settings", users home%>
-<%= button_to "Log Out", logout_path, method: :delete %>
- <%= button_to "Garden", gardens_path, method: :get %>
- <%= button_to "Settings", settings_path, method: :get %> 
+<div class="container-fluid">
+<button type="button" class="btn btn-warning"><%= link_to "Log Out", logout_path, method: :delete %></button>
+<button type="button" class="btn btn-success"><%= button_to "Garden", gardens_path, method: :get %></button>
+<button type="button" class="btn btn-secondary"><%= button_to "Settings", settings_path, method: :get %></button>
+</div>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" >Leaf-Out</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/plants/new">Seed <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/gardens"> Garden</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            
+            <button type="button" class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Log Out", logout_path, method: :delete %></button>
+          </form>
+        </div>
+      </nav>
+    </header>
