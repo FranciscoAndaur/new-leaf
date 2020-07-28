@@ -22,8 +22,9 @@ class UsersController < ApplicationController
   end
     
   def create
-    @user = User.create(user_params)
-      if @user.valid?
+    @user = User.new(user_params)
+    
+      if @user.save
         login_user(@user)
         redirect_to home_path(@user)
 
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
   private
     
   def user_params
-    params.require(:user).permit(:username, :password, :email, :avatar, gardens_attributes:[:garden_name] )
+    params.require(:user).permit(:username, :password,:password_confirmation, gardens:[:garden_name])
   end
   
   def find_user

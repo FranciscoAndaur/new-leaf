@@ -14,10 +14,13 @@
   </head>
 
   <body>
-
+    <div>
     <%= current_user ? (render partial: "layouts/nav/logged_in") : (render partial: "layouts/nav/logged_out")   %>
 
+    </div>
+    <div class="container">
     <%= yield %>
+    </div>
       <div class="footer">
          <p>Leaf-Out</p>
       </div>

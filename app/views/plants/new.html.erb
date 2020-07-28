@@ -5,7 +5,7 @@
     <% end %>
 <% end %>
 
-<div>
+<div class= "form">
 <%= form_for @plant do |f| %>
     <%= f.hidden_field :garden_id, value: "#{current_user.garden.id}" %>
     <%= f.label :plant%>

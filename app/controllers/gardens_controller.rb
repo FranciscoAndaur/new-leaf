@@ -1,7 +1,9 @@
 class GardensController < ApplicationController
 
     def index
+   
         @garden = Garden.find_by(user_id: current_user.id)
+       
     end
 
     private
