@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: [:new, :create]
 
   def show
     #find_user
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @error = flash[:errors]
+    @error = flash[:error]
     render :new
   end
     
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
       if @user.valid?
         redirect_to @user
       else 
-        flash[:errors]= @user.errors.full_messages
+        flash[:error]= @user.errors.full_messages
         redirect_to new_user_path
     end
   end
