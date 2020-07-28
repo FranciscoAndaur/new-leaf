@@ -1,9 +1,5 @@
 <%# view buttons for garden=> users plants, log out, "settings", users home%>
-<div class="container-fluid">
-<button type="button" class="btn btn-warning"><%= link_to "Log Out", logout_path, method: :delete %></button>
-<button type="button" class="btn btn-success"><%= button_to "Garden", gardens_path, method: :get %></button>
-<button type="button" class="btn btn-secondary"><%= button_to "Settings", settings_path, method: :get %></button>
-</div>
+
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" >Leaf-Out</a>
@@ -24,6 +20,7 @@
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             
+            <button type="button" class="btn btn-outline-warning my-2 my-sm-0"><%= link_to "Settings", settings_path, method: :get %></button>
             <button type="button" class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Log Out", logout_path, method: :delete %></button>
           </form>
         </div>
