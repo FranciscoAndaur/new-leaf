@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root 'newleaf#landing'
 
   get '/gardens', to: 'gardens#mygarden', as: "mygarden"
+  
+  get '/home', to: 'users#home'
   # get 'garden', to: 'gardens#garden'
 
   # get 'garden', to: 'gardens#show'
