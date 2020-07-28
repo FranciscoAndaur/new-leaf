@@ -1,14 +1,17 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize, only: [:new, :create]
   def new
   end
 
   def create
-    if @user = User.find_by(username: params[:username])
-      @user.authenticate (params[:password])
-      session[:user_id] = @user.id
-      flash[:notice] = "login succesfull! Welcome #{user.name}"
+    # we are only reading the data not creating a new user
+     @user = User.find_by(username: params[:username])
+     if @user && @user.authenticate (params[:password])
+      login_user(@user)
+      flash[:notice] = "Login Succesfull! Welcome #{user.name}"
       redirect_to @user
-  else flash[:notice] = "incorrect username or password"
+    else 
+      flash[:notice] = "Incorrect Username or Password"
       redirect_to login_path 
     end
   end

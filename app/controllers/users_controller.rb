@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: [:new, :create]
 
   def show
     #find_user
@@ -20,6 +21,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.valid?
+        # this sets up the session for the user
+        login_user(@user)
         redirect_to @user
       else 
         flash[:errors]= @user.errors.full_messages
