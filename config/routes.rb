@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :completion_dates
   resources :tasks
   resources :plants
-  # resources :gardens
+  resources :gardens
   resources :users
   get '/settings', to: "users#settings", as: "settings"
   root 'newleaf#landing'
