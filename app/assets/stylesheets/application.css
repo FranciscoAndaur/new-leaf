@@ -28,3 +28,24 @@
     color: white;
     text-align: center;
  }
+
+ .header{
+    margin: 0;
+    background: rgb(82, 212, 78);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+
+    .bg-img { 
+      background-image: url(demo.jpg) ;
+      background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+      background-color: #999;
+
+}
+
+

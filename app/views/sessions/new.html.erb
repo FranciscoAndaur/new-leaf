@@ -1,13 +1,36 @@
-<h1>Login</h1>
-<h2> <%= flash[:notice] %></h2>
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
-<%= form_tag login_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
+
+
+
+<div id="login">
+  <div class="login-card">
+  <a center class="button is-danger"> 🌱 <%= flash[:notice] %></a>
+    <div class="card-title">
+      <h1>Please Sign In</h1>
+    </div>
+
+    <div class="content">
+      <form action="/login" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="qiF7zh0pJalih68sLCBX31o6alwtPCgl0/tKcvPma8oVubQ8MCpBjk94rwrZOwvN4ncfxxC1+NGdkWf4TqNXFg==" />
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" />
     <br>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" />
     <br>
-<%= submit_tag 'login' %>
-don't have an account? <%= link_to "Register", new_user_path%>
-<% end%>
+
+
+        <div class="level options">
+          <a class="btn btn-link level-right" href="/users/new">Register</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
