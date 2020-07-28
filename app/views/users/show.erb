@@ -1,6 +1,11 @@
-<h1>name:<%= link_to @user.name, @user %></h1>
+<h1>welcome <%= link_to @user.username, @user %></h1>
 <br>
 #TODO: add a link to garden
 garden name:<%# garden name: <%=  %> %>
 
-<%=button_to "Edit", edit_user_path(@user) , method: :get%>
+<%= if current_user.id == @user.id
+button_to "Edit", edit_user_path(@user) , method: :get 
+end%>
+<%= if current_user.id == @user.id
+button_to "Delete", edit_user_path(@user) , method: :get 
+end%>

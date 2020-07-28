@@ -14,18 +14,17 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @error = flash[:errors]
+    @error = flash[:error]
     render :new
   end
     
   def create
     @user = User.create(user_params)
       if @user.valid?
-        # this sets up the session for the user
         login_user(@user)
         redirect_to @user
       else 
-        flash[:errors]= @user.errors.full_messages
+        flash[:error]= @user.errors.full_messages
         redirect_to new_user_path
     end
   end
