@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
    @user = find_user
     if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
+        login_user(@user)
         flash[:notice] = "Login succesfull! Welcome #{@user.username}"
         redirect_to @user
     else flash[:notice] = "Incorrect username or password"
@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to login_path, notice: 'Logged out!'
+    flash[:notice] = "Logged out!"
+    redirect_to login_path
   end
 
   private
