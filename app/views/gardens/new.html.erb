@@ -1,22 +1,2 @@
-<h1>No Garden?</h1>
-<%= form_for @garden do |f| %>
-<%= f.label :garden_name %>
-<%= f.text_field :garden_name%>
-<%# <%= f.hidden_field :garden_pop value: @garden.plants.count %> %>
-<br>
- <%= fields_for :plant do |p| %>
-    <%= p.label :plant %>
-    <%= p.text_field :plant_type %>
-    <br>
-    <%= p.label :nickname %>
-    <%= p.text_field :nickname%>
-    <br>
-    <%= p.label :size %>
-    <%= p.text_field :size %>
-    <br>
-    <%= p.label :Water_needed%>
-    <%= p.text_field :water_ammount %>
+<h1>New Garden?</h1>
 
-  <% end %>
-<%= f.submit %>
-<% end%>
