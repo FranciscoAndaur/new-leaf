@@ -4,7 +4,7 @@
     <title>LeafOut</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,11 @@
     <%= current_user ? (render partial: "layouts/nav/logged_in") : (render partial: "layouts/nav/logged_out")   %>
 
     <%= yield %>
+
+  <div class="bg-img">
+  <%= image_tag "home/original.jpg" %>
+
+  </div>
       <div class="footer">
          <p>Leaf-Out</p>
       </div>

@@ -1,10 +1,13 @@
-<h1> SIGN UP </h1>
+
 <br>
-<font size="+1" face="Comic Sans MS">
+
 
 <% if @errors%>
-    <% @error.each do |err| %>
-        <%= err %><br>
+    <% @errors.each do |err| %>
+        
+        <a class="button is-danger">🌱
+  <%= err%>
+</a><br>
     <% end%>
 <% end%>
 

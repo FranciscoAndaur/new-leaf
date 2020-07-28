@@ -2,7 +2,6 @@ class PlantsController < ApplicationController
 
     def new
         @plant = Plant.new
-        byebug
     end
      
     def create
