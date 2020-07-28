@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
       if @user.valid?
         login_user(@user)
-        redirect_to home_path
+        redirect_to home_path(@user)
 
       else 
         flash[:error]= @user.errors.full_messages
