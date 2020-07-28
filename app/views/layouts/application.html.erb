@@ -10,9 +10,12 @@
   </head>
 
   <body>
-  #TODO: fix login button.
-    <%= current_user ? button_to('Logout', logout_path, {method: :delete}) : button_to('Login', login_path, {method: :get})  %>
+
+    <%= current_user ? (render partial: "layouts/nav/logged_in") : button_to('Login', login_path, {method: :get})  %>
 
     <%= yield %>
+      <div class="footer">
+         <p>Leaf-Out</p>
+      </div>
   </body>
 </html>

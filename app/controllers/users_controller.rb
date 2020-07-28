@@ -2,9 +2,10 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:new, :create]
 
-  def show
+  def settings
     #find_user
-    render :show
+    @user = current_user
+    
   end
 
   def edit
