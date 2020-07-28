@@ -1,14 +1,17 @@
 <%= form_for @user do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<br>
-<%= f.label :password %>
-<%= f.text_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.text_field :password_confirmation %>
-<%= f.fields_for :gardens do |g| %>
-<%= g.label :garden_name %>
-<%= g.text_field :garden_name  %>
-<% end %>
-<%= f.submit %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation %>
+    <br>
+    <%= f.fields_for :gardens do |g| %>
+    <%= g.label :garden_name %>
+    <%= g.text_field :garden_name  %>
+    <% end %>
+    <br>
+    <%= f.submit %>
 <% end%>
