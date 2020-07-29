@@ -12,7 +12,6 @@ Plant.destroy_all
 
 User.create(
     {
-        email: "asdf@gmail.com",
         username: "fran",
         password: "asdf",
         password_confirmation: "asdf"
@@ -23,12 +22,11 @@ User.create(
 Garden.create(
     {
         garden_name: Faker::FunnyName.name,
-        plant_pop: 30,
         user_id: User.first.id
     }
 )
 
-30.times do 
+10.times do 
     Plant.create(
         plant_type: Faker::Cannabis.strain,
         nickname: Faker::FunnyName.two_word_name,

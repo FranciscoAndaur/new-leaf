@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_205704) do
 
   create_table "gardens", force: :cascade do |t|
     t.string "garden_name"
-    t.integer "plant_pop"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,11 +43,11 @@ ActiveRecord::Schema.define(version: 2020_07_27_205704) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "water"
-    t.boolean "sunlight", default: false
-    t.boolean "affection", default: false
+    t.string "content"
     t.bigint "plant_id", null: false
     t.bigint "user_id", null: false
+    t.datetime "start_date"
+    t.integer "days_completed", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plant_id"], name: "index_tasks_on_plant_id"
@@ -56,10 +55,8 @@ ActiveRecord::Schema.define(version: 2020_07_27_205704) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
     t.string "username"
     t.string "password_digest"
-    t.binary "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

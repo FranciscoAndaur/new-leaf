@@ -3,7 +3,11 @@ class PlantsController < ApplicationController
     def new
         @plant = Plant.new
     end
-     
+
+    def show
+
+    end
+
     def create
         @plant = Plant.new(plant_params)
         if @plant.save

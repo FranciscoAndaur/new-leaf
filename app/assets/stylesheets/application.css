@@ -37,4 +37,13 @@
 
 }
 
+   .tasks {
+      align-content: flex-end;
+      border-style: solid;
+      border: 2px solid aquamarine;
+      border-radius: 5px;
+      padding: 3em;
+      background-color: rgb(191, 241, 243);
+   }
+
 

@@ -1,0 +1,18 @@
+<div class= "plantpage">
+    <%= @plant.plant_type%>
+    <%= @plant.nickname %>
+    <%= @plant.size %> inch
+    <%= @plant.water_ammount %>
+    <%= link_to "New Task", new_task_path %>
+</div>
+
+<div class="tasks">
+    <% @plant.tasks.each do |task|%>
+       Water Needs: <%= task.water%>
+       <br>
+       Sunlight Needs: <%= task.sunlight %>
+       <br>
+       Affection: <%= task.affection %>
+    <% end %>
+</div>
+
