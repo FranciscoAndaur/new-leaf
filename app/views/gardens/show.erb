@@ -1,0 +1,27 @@
+ </div>
+  <section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="hero title">
+      <h2 class="hero subtitle">
+        Garden Name:  <%= @garden.garden_name %>
+        <h1 class="hero title">
+        <h2 class="hero subtitle">
+        Garden Owner:  <%= @garden.user.username %>
+        <h1 class="hero title">
+        <h2 class="hero subtitle">
+        Current Plant Population:  <%= @garden.plant_population %></h1>
+        <hr>
+        🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
+<div class="plant">
+
+<% @garden.plants.each do |p|%>
+
+   <%= p.plant_type  %> || <%= p.nickname %> 
+   
+<% end %>
+        <br>
+      </h2>
+    </div>
+  </div>
+</section>

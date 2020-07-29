@@ -6,6 +6,10 @@ class GardensController < ApplicationController
        
     end
 
+    def show
+        @garden = Garden.find_by(user_id: params[:id])
+    end
+
     private
 
     # def garden_params
