@@ -6,7 +6,7 @@
 </div>
     
 <div class= "taskbutton">
-    <%= link_to "New Task", new_task_path %>
+    <%= link_to "New Task", new_task_path(plant_id: @plant.id) %>
 </div>
 
 <div class="taskslist">

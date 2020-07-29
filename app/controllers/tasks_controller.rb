@@ -5,15 +5,12 @@ class TasksController < ApplicationController
     end
 
     def create
-        byebug 
-        flash[:plant_id]
         @task = Task.new(task_params)
         if @task.save
             # redierct to plant page belonging to the garden
-            bybug
-            redirect_to gardens_path
+            redirect_to @task.plant
         else
-            
+            render :new
         end
         
     end

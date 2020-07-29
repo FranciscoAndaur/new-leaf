@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
         User.find_by(id: session[:user_id])
     end
 
+    def current_plant
+        Plant.find_by(id: session[:plant_id])
+    end
+
     def login_user(user)
         session[:user_id] = user.id
     end

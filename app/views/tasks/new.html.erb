@@ -1,27 +1,19 @@
+<% if @task.errors.any? %>
+<% @task.errors.full_messages.each do |m|%>
+<%= m %><br>
+<% end%>
+<% end%>
+
 <div class= "form">
 <%= form_for @task do |f|%>
-  
-    <div class="form-group row">
-        <%= f.label :task, :class => "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-        <%= f.text_field :content, :class => "form-control" %>
-    </div>
-    </div>
+        <%= f.label :task %>
+        <%= f.text_field :content %><br>
+        <%= f.label :start_date %>
+        <%= f.date_select :start_date %><br>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :plant_id, value: params[:plant_id] %>
 
-    <div class="form-group row">
-        <%= f.label :start_date, :class => "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-        <%= f.date_select :start_date, :class => "form-control" %>
-    </div>
-<<<<<<< HEAD
-        <div>
-            <% f.hidden_field :user_id, value: current_user.id %>
-        </div>
-=======
+        <%= f.submit %>
         
->>>>>>> master
-    </div>
-        <%= f.submit "Create Task" %>
-    </div>
-    <% end %>
+        <% end %>
 </div>
