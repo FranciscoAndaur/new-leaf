@@ -25,7 +25,24 @@
  
 <% end %>
 
- </div>
 
+ </div>
+  <section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <h2>Garden Name: <%= @garden.garden_name %></h2>
+      </h1>
+      <h2 class="subtitle">
+      <p><%= @garden.user.username %></p>
+        <br>
+        <%= link_to "Edit User", edit_user_path(current_user)%>
+        <br>
+        <%= link_to "Delete Profile", user_path(current_user), method: 'delete', data: {confirm: "Are you sure?"} %>
+        <br>
+      </h2>
+    </div>
+  </div>
+</section>
 
 
