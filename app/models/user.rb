@@ -9,8 +9,7 @@ class User < ApplicationRecord
     has_secure_password
 
     def gardens=(param)
-        self.garden = Garden.create(garden_name: param['garden_name'], plant_pop: 0, user_id: self.id)
-
+        self.garden = Garden.create(garden_name: param['garden_name'], user_id: self.id)
     end
   
 end

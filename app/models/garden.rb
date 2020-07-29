@@ -4,6 +4,7 @@ class Garden < ApplicationRecord
   accepts_nested_attributes_for :plants
 
   def plant_population
-   !!self.plant_pop
+   
+    self.plants.count
   end
 end

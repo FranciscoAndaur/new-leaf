@@ -7,11 +7,11 @@
     <%=button_to "Seed",new_plant_path, method: :get %>
 </div>
 
-<% if @garden.plant_population %>
-   Current Plant Population:<%= @garden.plant_pop %>
-  <% else %>
+
+   Current Plant Population:<%= @garden.plant_population %>
+  
   <h4>Add Some Plants!</h4>
-<% end %>
+
 
 <hr>
 <hr>
@@ -21,7 +21,7 @@
 
    <%= link_to p.plant_type, p %> || <%= p.nickname %> 
    <br>
-     <%= link_to "RIP", p, method: :delete %>
+     <%= link_to "RIP -", p, method: :delete %>
  
 <% end %>
 
