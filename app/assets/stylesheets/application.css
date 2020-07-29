@@ -19,31 +19,36 @@
  }
  
  .header{
-    margin: 0;
-    background: rgb(82, 212, 78);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) }
+   margin: 0;
+   background: rgb(82, 212, 78);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%) }
 
-    .bg-img { 
-      background-image: url(demo.jpg) ;
-      background-position: center center;
-      background-repeat:  no-repeat;
-      background-attachment: fixed;
-      background-size:  cover;
-      background-color: #999;
+.bg-img { 
+   background-image: url(demo.jpg) ;
+   background-position: center center;
+   background-repeat:  no-repeat;
+   background-attachment: fixed;
+   background-size:  cover;
+   background-color: #999;
 
 }
 
-   .tasks {
-      align-content: flex-end;
-      border-style: solid;
-      border: 2px solid aquamarine;
-      border-radius: 5px;
-      padding: 3em;
-      background-color: rgb(191, 241, 243);
+.tasks {
+   align-content: flex-end;
+   border-style: solid;
+   border: 2px solid aquamarine;
+   border-radius: 5px;
+   padding: 3em;
+   background-color: rgb(191, 241, 243);
    }
+
+body.home {
+   background-image: url("original.jpg");
+   background-size: cover;
+}
 
 
