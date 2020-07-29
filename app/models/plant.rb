@@ -13,8 +13,11 @@ class Plant < ApplicationRecord
   # t.integer "water_ammount"
 
   def plant_tasks
-    byebug
     self.tasks.count
+  end
+
+  def plant=(input)
+    byebug
   end
 
 

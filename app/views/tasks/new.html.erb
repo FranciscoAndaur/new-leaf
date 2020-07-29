@@ -1,6 +1,24 @@
 <div class= "form">
     <%= form_for @task do |f|%>
-        <%= f.label :task %>
-        <%= f.text_field :content %>
+  
+    <div class="form-group row">
+        <%= f.label :task, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+        <%= f.text_field :content, :class => "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :start_date, :class => "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+        <%= f.date_select :start_date, :class => "form-control" %>
+    </div>
+        <div>
+              <%= f.hidden_field :habit_id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+        </div>
+    </div>
+        <%= f.submit "Create Task" %>
+    </div>
     <% end %>
 </div>
