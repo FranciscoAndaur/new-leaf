@@ -17,18 +17,7 @@
  .form{
     position: absolute;
  }
-
-
- .footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(93, 197, 133);
-    color: white;
-    text-align: center;
- }
-
+ 
  .header{
     margin: 0;
     background: rgb(82, 212, 78);
