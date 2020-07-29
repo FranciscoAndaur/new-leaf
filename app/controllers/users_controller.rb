@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def update
     password = params[:password]
     @user = User.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to gardens_path
   end
 
   def destroy

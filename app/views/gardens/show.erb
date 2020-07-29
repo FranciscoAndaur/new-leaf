@@ -11,29 +11,17 @@
         <h1 class="hero title">
         <h2 class="hero subtitle">
         Current Plant Population:  <%= @garden.plant_population %></h1>
-        <h1 class="hero title">
-        <h2 class="hero subtitle">
-        <div class="headerNav">
-        Plant a seed: <button class="button is-link"><%=link_to "🌱",new_plant_path, method: :get %></button>
-        </div>  
-        <br>
-        <br>
-        Add Some Plants!
         <hr>
         🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
 <div class="plant">
 
 <% @garden.plants.each do |p|%>
 
-   <%= link_to p.plant_type, p %> || <%= p.nickname %> 
-   <br>
-     <%= link_to "RIP -", p, method: :delete %>
- 
+   <%= p.plant_type  %> || <%= p.nickname %> 
+   
 <% end %>
         <br>
       </h2>
     </div>
   </div>
 </section>
-
-
