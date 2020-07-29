@@ -10,8 +10,9 @@
 </div>
 
 <div class="taskslist">
+Tasks:
     <% @plant.tasks.each do |task|%>
-    <%= task.content %>
+    <div class=task><%= task.content %><div>
     <% end %>
 </div>
 

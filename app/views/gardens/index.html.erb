@@ -21,13 +21,15 @@
         Add Some Plants!
         <hr>
         🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
-<div class="plant">
+<div class="row row-cols-4 justify-content-between">
 
 <% @garden.plants.each do |p|%>
 
-   <%= link_to p.plant_type, p %> || <%= p.nickname %> 
-   <br>
-     <%= link_to "RIP -", p, method: :delete %>
+  <div class="col border rounded-lg box">
+    <%= link_to p.plant_type, p %> || <%= p.nickname %> 
+    <br>
+    <%= link_to "RIP -", p, method: :delete %>
+  </div>
  
 <% end %>
         <br>

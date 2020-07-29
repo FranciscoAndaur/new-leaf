@@ -26,6 +26,9 @@ gem "rest-client"
 # gem 'image_processing', '~> 1.2'
 gem 'faker'
 # Reduces boot times through caching; required in config/boot.rb
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.5.0'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
