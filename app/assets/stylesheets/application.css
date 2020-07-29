@@ -15,7 +15,12 @@
  */
 
  .form{
-    position: absolute;
+   align-content: flex-end;
+   border-style: solid;
+   background-color: rgb(255, 243, 70);
+   border-radius: 5px;
+   padding: 3em;
+   opacity: 50%;
  }
  
  .header{
