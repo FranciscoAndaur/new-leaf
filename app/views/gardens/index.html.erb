@@ -1,20 +1,26 @@
-
- <h2><%= @garden.garden_name %></h2>
-
- <p><%= @garden.user.username %></p>
- 
-<div class="headerNav">
-    <%=button_to "Seed",new_plant_path, method: :get %>
-</div>
-
-
-   Current Plant Population:<%= @garden.plant_population %>
-  
-  <h4>Add Some Plants!</h4>
-
-
-<hr>
-<hr>
+ </div>
+  <section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="hero title">
+      <h2 class="hero subtitle">
+        Garden Name:  <%= @garden.garden_name %>
+        <h1 class="hero title">
+        <h2 class="hero subtitle">
+        Garden Owner:  <%= @garden.user.username %>
+        <h1 class="hero title">
+        <h2 class="hero subtitle">
+        Current Plant Population:  <%= @garden.plant_population %></h1>
+        <h1 class="hero title">
+        <h2 class="hero subtitle">
+        <div class="headerNav">
+        Plant a seed: <button class="button is-link"><%=link_to "🌱",new_plant_path, method: :get %></button>
+        </div>  
+        <br>
+        <br>
+        Add Some Plants!
+        <hr>
+        🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
 <div class="plant">
 
 <% @garden.plants.each do |p|%>
@@ -24,21 +30,6 @@
      <%= link_to "RIP -", p, method: :delete %>
  
 <% end %>
-
-
- </div>
-  <section class="hero is-success">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        <h2>Garden Name: <%= @garden.garden_name %></h2>
-      </h1>
-      <h2 class="subtitle">
-      <p><%= @garden.user.username %></p>
-        <br>
-        <%= link_to "Edit User", edit_user_path(current_user)%>
-        <br>
-        <%= link_to "Delete Profile", user_path(current_user), method: 'delete', data: {confirm: "Are you sure?"} %>
         <br>
       </h2>
     </div>
