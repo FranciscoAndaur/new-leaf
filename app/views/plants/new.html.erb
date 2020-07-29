@@ -1,9 +1,10 @@
-
+<div>
 <% if @plant.errors.any?  %>
     <% @plant.errors.full_messages.each do |m| %>
         <%= m %> <br>
     <% end %>
 <% end %>
+</div>
 
 <div class= "form">
 <%= form_for @plant do |f| %>
