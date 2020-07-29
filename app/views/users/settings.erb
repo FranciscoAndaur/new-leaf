@@ -5,16 +5,15 @@
         Settings
       </h1>
       <h2 class="subtitle">
-        Primary subtitle
+        <br>
+        <%= link_to "Edit User", edit_user_path(current_user)%>
+        <br>
+        <%= link_to "Delete Profile", user_path(current_user), method: 'delete', data: {confirm: "Are you sure?"} %>
+        <br>
       </h2>
     </div>
   </div>
 </section>
-<br>
-<br>
 
-<%= link_to "Edit User", edit_user_path(current_user)%>
-<br>
-<br>
-<%= link_to "Delete", user_path(current_user), method: 'delete', data: {confirm: "Are you sure?"} %>
+
 
