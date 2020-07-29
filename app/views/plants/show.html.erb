@@ -3,16 +3,15 @@
     <%= @plant.nickname %>
     <%= @plant.size %> inch
     <%= @plant.water_ammount %>
+</div>
+    
+<div class= "taskbutton">
     <%= link_to "New Task", new_task_path %>
 </div>
 
-<div class="tasks">
+<div class="taskslist">
     <% @plant.tasks.each do |task|%>
-       Water Needs: <%= task.water%>
-       <br>
-       Sunlight Needs: <%= task.sunlight %>
-       <br>
-       Affection: <%= task.affection %>
+    <%= task.content %>
     <% end %>
 </div>
 

@@ -37,7 +37,7 @@
 
 }
 
-.tasks {
+.taskslist {
    align-content: flex-end;
    border-style: solid;
    border: 2px solid aquamarine;
@@ -46,6 +46,19 @@
    background-color: rgb(191, 241, 243);
    }
 
+.taskbutton { 
+      border-style: solid;
+      border: 2px solid aquamarine;
+      text-align: center;
+   }
+
+.plantpage{
+   align-content: flex-end;
+   border-style: solid;
+   border: 2px solid aquamarine;
+   border-radius: 5px;
+   padding: 3em;
+}
 body.home {
    background-image: url("original.jpg");
    background-size: cover;
