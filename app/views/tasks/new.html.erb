@@ -1,9 +1,14 @@
 <h1>CREATE NEW TASK</h1>
 <% if @task.errors.any? %>
 <% @task.errors.full_messages.each do |m|%>
-<%= m %><br>
+<div class="notification is-info is-light">
+  <button class="delete"></button>
+  <%= m %><br>
+</div>
 <% end%>
 <% end%>
+
+
 
 <div class= "form">
 <%= form_with model: @task, local: true do |f|%>

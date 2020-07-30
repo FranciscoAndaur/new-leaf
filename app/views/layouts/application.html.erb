@@ -17,15 +17,23 @@
   
     <div>
     <%= current_user ? (render partial: "layouts/nav/logged_in2") : (render partial: "layouts/nav/logged_out2")   %>
-
     </div>
-    <div class="container">
+    
+
     <%= yield %>
+
 
   <div class="bg-img">
   <%= image_tag "home/original.jpg" %>
-
   </div>
       
   </body>
+  <footer class="footer">
+    <hr>
+    <div class="footer-bottom has-text-centered">
+      © 2020 <a href="">Leaf-Out</a>.
+      A <a href="https://flatironschool.com/">Flatiron School</a> Project By Netaly and Francisco.
+    </div>
+  </div>
+</footer>
 </html>
