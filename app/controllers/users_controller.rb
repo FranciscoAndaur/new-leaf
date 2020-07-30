@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     
   def create
     @user = User.new(user_params)
-    byebug
       if @user.save
         login_user(@user)
         redirect_to home_path(@user)
