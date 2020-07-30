@@ -12,7 +12,7 @@ class Task < ApplicationRecord
   def interval_days
     case self.interval
     when "daily"
-      1.day
+      1.hour
     when "weekly"
       7.day
     when "bi-weekly"
