@@ -1,8 +1,13 @@
 <div class= "plantpage">
-    <%= @plant.plant_type%>
-    <%= @plant.nickname %>
-    <%= @plant.size %> inch
-    <%= @plant.water_ammount %>
+    <div class="d-flex justify-content-around">
+    <h1>Name: <%= @plant.nickname %></h1>
+    <h1>Type: <%= @plant.plant_type%></h1>
+    </div>
+    <br>
+    <div class="d-flex justify-content-around">
+    <h1>Size: <%= @plant.size %> inch</h1>
+    <h1>Water: <%= @plant.water_ammount %> cups</h1>
+    </div>
 </div>
     
 <div class= "taskbutton">
@@ -17,14 +22,17 @@
         Tasks:  
 
 
-<div class="d-flex align-content-stretch flex-wrap">
+<div class="d-flex justify-content-between flex-wrap">
 
 
 <% @plant.tasks.each do |task|%>
 <br>
- <br><div class="col border rounded-lg box hero is-success">
-    <button type="button" class="btn btn-success"><%= link_to task.name, task %></button>
-    cycles: <%= task.interval %>
+ <br><div class="width-20 rounded-lg box hero is-success">
+    <%= button_to task.name, task, class: "btn btn-success" %>
+    <span><small>Frequency:</small></span>
+    <small><%= task.interval %><br></small>
+    <span><small>Time Left:</small></span>
+    <small><%= task.time_left %></small>
     </div>
 <br>
 <br>

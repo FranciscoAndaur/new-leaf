@@ -11,10 +11,10 @@
         <%= f.text_field :name%><br>
         <%= f.label :interval %>
          <select name="interval" >
-                <option value=“daily”>Daily</option>
-                <option value=“weekly”>Weekly</option>
-                <option value=“bi-weekly”>Bi-Weekly</option>
-                <option value=“monthly”>Monthly</option>
+                <option value=daily>Daily</option>
+                <option value=weekly>Weekly</option>
+                <option value=bi-weekly>Bi-Weekly</option>
+                <option value=monthly>Monthly</option>
         </select><br>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :plant_id, value: params[:plant_id] %>
