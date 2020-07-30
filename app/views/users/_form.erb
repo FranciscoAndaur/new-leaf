@@ -3,46 +3,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+
+  
 <section class="hero is-success section $section-padding-medium">
 <section class="hero is-success section $section-padding-medium">
+    
       <h1 class="title">Sign Up</h1>
       <h2 class="subtitle">
         Welcome to <strong>Komorebi</strong>, your plant's are gonna love you for this.
       </h2>
+    
   </section>
   <div class="tile is-ancestor">
   <div class="tile is-vertical is-8">
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-primary">
-
-          <%= form_for @user do |f| %>
-    <%= f.label :username %> :  
-    <center><%= f.text_field :username %></center> 
-    <%= f.label :password %> : 
-    <center><%= f.password_field :password %></center> 
-    <%= f.label :password_confirmation %> : 
-    <center><%= f.password_field :password_confirmation %></center> 
-    <%= f.fields_for :garden_name  do |g| %>
-      <%= g.label :garden_name %> : 
-      <center><%= g.text_field :garden_name  %>  </center> 
+        <%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br>
+    <%= f.fields_for :garden_name do |g| %>
+      <%= g.label :garden_name %>
+      <%= g.text_field :garden_name  %>   
       <% end %>
+    <br>
+    <%= f.submit %>
+    <% end%>
         </article>
         <article class="tile is-child notification is-warning">
           <p class="title">Are you sure?</p>
           <p class="subtitle">if you're ready, click the button to create your account.</p>
-          <%= f.submit %>
-    <% end%>
-    
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
           <p class="title"> 🌱🌿🍃🌳🌱🌿🍃🌳🌱🌿 </p>
           <p class="subtitle">  🍃🌳🌱by Netaly & Francisco 🍃🌳🌱🌿  </p>
-          <% <figure class="image is-4by3">
+          <figure class="image is-4by3">
             <%= image_tag "home/plant.jpg" %>
-          <% </figure> %>
+          </figure>
         </article>
       </div>
     </div>
@@ -61,7 +68,9 @@
       <div class="content">
         <p class="title">About us:</p>
         <p class="subtitle">During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!! One warm evening, in Netaly's Garage, while they were getting ready to crack open a 24 case of Coronas. They discussed the idea for an app, which would change the world forever.<br><br>
+
 "We had to start somewhere ... plants was what we agreed upon." Francisco<br><br>
+
 "This never happened" Netaly</p>
         <div class="content">
           <!-- Content -->
@@ -70,3 +79,9 @@
     </article>
   </div>
 </div>
+
+
+
+
+
+
