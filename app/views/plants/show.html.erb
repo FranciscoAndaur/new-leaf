@@ -23,7 +23,8 @@
 <% @plant.tasks.each do |task|%>
 <br>
  <br><div class="col border rounded-lg box hero is-success">
-    <button type="button" class="btn btn-success"><%= link_to task.content, task %></button>
+    <button type="button" class="btn btn-success"><%= link_to task.name, task %></button>
+    cycles: <%= task.interval %>
     </div>
 <br>
 <br>

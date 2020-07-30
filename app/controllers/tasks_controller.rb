@@ -6,8 +6,11 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.new(task_params)
+        @task.interval = params[:interval]
+        byebug
         if @task.save
             # redierct to plant page belonging to the garden
+            
             redirect_to @task.plant
         else
             render :new

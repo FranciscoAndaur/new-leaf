@@ -9,6 +9,7 @@ require 'faker'
 User.destroy_all
 Garden.destroy_all
 Plant.destroy_all
+Task.destroy_all
 
 User.create(
     {
