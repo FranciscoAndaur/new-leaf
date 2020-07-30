@@ -1,5 +1,5 @@
 <!-- Navigation bar -->
-  <nav class="navbar is-link is-fixed-top">
+  <nav class="navbar is-transparent is-fixed-top">
     <div class="navbar-brand">
       <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
         <span></span>
@@ -39,6 +39,8 @@
             <i class="fas fa-envelope"></i>
           </span>
           <span>Homies</span>
+          <button type="button" class="btn btn-outline-warning"><%= link_to "Settings", settings_path, method: :get %></button>
+            <button type="button" class="btn btn-outline-success"><%= link_to "Log Out", logout_path, method: :delete %></button>
         </a>
       </div>
     </div>
