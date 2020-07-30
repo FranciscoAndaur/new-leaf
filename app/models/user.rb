@@ -9,7 +9,8 @@ class User < ApplicationRecord
     
     has_secure_password
 
-    def gardens=(param)
+    def garden_name=(param)
+    
         self.garden = Garden.create(garden_name: param['garden_name'], user_id: self.id)
     end
   

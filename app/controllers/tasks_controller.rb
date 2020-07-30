@@ -27,7 +27,6 @@ class TasksController < ApplicationController
     end
 
     def update
-        #TODO fix it Jackson
         @task = Task.find(params[:id])
         @task.complete
         redirect_to @task.plant

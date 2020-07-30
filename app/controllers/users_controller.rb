@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     
   def create
     @user = User.new(user_params)
-    
+    byebug
       if @user.save
         login_user(@user)
         redirect_to home_path(@user)
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   private
     
   def user_params
-    params.require(:user).permit(:username, :password,:password_confirmation, gardens:[:garden_name])
+    params.require(:user).permit(:username, :password,:password_confirmation, garden_name:[:garden_name])
   end
   
   def find_user
