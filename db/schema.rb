@@ -43,11 +43,10 @@ ActiveRecord::Schema.define(version: 2020_07_27_205704) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "content"
+    t.string "name"
+    t.string "interval"
     t.bigint "plant_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "start_date"
-    t.integer "days_completed", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plant_id"], name: "index_tasks_on_plant_id"

@@ -14,10 +14,22 @@ class TasksController < ApplicationController
         end
         
     end
+
+    def show
+        @task = Task.find(params[:id])
+    end
+
+    def update
+        #TODO fix it Jackson
+        task = params[:days_completed]
+        @task = Task.update(task_params)
+        redirect_to gardens_path
+    end
+
     private
     def task_params
 
-        params.require(:task).permit(:content, :start_date, :plant_id, :user_id)
+        params.require(:task).permit(:name, :interval, :plant_id, :user_id)
     end
     
 end
