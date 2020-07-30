@@ -9,10 +9,28 @@
     <%= link_to "New Task", new_task_path(plant_id: @plant.id) %>
 </div>
 
-<div class="taskslist">
-Tasks:
-    <% @plant.tasks.each do |task|%>
-    <div class=task><%= task.content %><div>
-    <% end %>
-</div>
+<section class="hero is-link">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="hero title">
+      <h2 class="hero subtitle">
+        Tasks:  
 
+
+<div class="d-flex align-content-stretch flex-wrap">
+
+
+<% @plant.tasks.each do |task|%>
+<br>
+ <br><div class="col border rounded-lg box hero is-success">
+    <button type="button" class="btn btn-success"><%= link_to task.content, task %></button>
+    </div>
+<br>
+<br>
+<% end %>
+</div>
+        </h1>
+      </h2>
+    </div>
+  </div>
+</section>
