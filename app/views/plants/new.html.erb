@@ -1,10 +1,15 @@
 
 <% if @plant.errors.any?  %>
     <% @plant.errors.full_messages.each do |m| %>
-        <a class="button is-danger">🍂 <%=  m %></a>
+        <div class="notification is-success is-light">
+  <button class="delete"></button>
+  <%=  m %>
+</div>
     <% end %>
 <% end %>
 </div>
+
+
 
 <div class= "form">
 <%= form_for @plant do |f| %>
