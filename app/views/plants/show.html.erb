@@ -28,11 +28,13 @@
 <% @plant.tasks.each do |task|%>
 <br>
  <br><div class="width-20 rounded-lg box hero is-success">
-    <%= button_to task.name, task, class: "btn btn-success" %>
+    <%= button_to task.name, task, method: :patch, class: "btn btn-success" %>
     <span><small>Frequency:</small></span>
     <small><%= task.interval %><br></small>
     <span><small>Time Left:</small></span>
     <small><%= task.time_left %></small>
+    
+    <%= button_to  "   ", task, method: :delete, class: "border"%>
     </div>
 <br>
 <br>

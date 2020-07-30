@@ -20,11 +20,17 @@ class TasksController < ApplicationController
         @task = Task.find(params[:id])
     end
 
+    def destroy
+        @task = Task.find(params[:id])
+          @task.delete  
+        redirect_to @task.plant
+    end
+
     def update
         #TODO fix it Jackson
-        task = params[:days_completed]
-        @task = Task.update(task_params)
-        redirect_to gardens_path
+        @task = Task.find(params[:id])
+        @task.complete
+        redirect_to @task.plant
     end
 
     private
