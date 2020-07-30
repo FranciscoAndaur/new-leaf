@@ -30,7 +30,7 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
     <br>
-    <%= f.fields_for :gardens do |g| %>
+    <%= f.fields_for :garden_name do |g| %>
       <%= g.label :garden_name %>
       <%= g.text_field :garden_name  %>   
       <% end %>
