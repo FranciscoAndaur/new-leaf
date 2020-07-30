@@ -1,7 +1,7 @@
-<div>
+
 <% if @plant.errors.any?  %>
     <% @plant.errors.full_messages.each do |m| %>
-        <%= m %> <br>
+        <a class="button is-danger">🍂 <%=  m %></a> <br>
     <% end %>
 <% end %>
 </div>
@@ -10,10 +10,10 @@
 <%= form_for @plant do |f| %>
     <%= f.hidden_field :garden_id, value: "#{current_user.garden.id}" %>
     <%= f.label :plant%>
-    <%= f.text_field :plant_type %> 🍄
+    <%= f.text_field :plant_type %> 
     <br>
     <%= f.label :nickname%>
-    <%= f.text_field :nickname %> 🌺
+    <%= f.text_field :nickname %> 
     <br>
     <%= f.label :size_in_inches%>
     <%= f.number_field :size %> inch
