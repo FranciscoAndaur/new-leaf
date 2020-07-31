@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <th>Size: </th>
-                <td><%= @plant.plant_type %></td>
+                <td><%= @plant.size %></td>
             </tr>
             <tr>
                 <th id="care"> Care:
@@ -24,16 +24,24 @@
     </div>
 
     <div class="d-flex flex-column w-100 task-box-container ml-5">
-        <div class="d-flex justify-content-end new-task"> 
 
-            <%= link_to "+", new_task_path(plant_id: @plant.id), class: "btn btn-outline-info new-task-btn"%>
+        <div class="d-flex justify-content-end new-task mr-4"> 
+            <% if @plant.tasks.count == 0 %>
+                
+                    <h1 class="alert alert-success" role="alert"> Add A Task To Get Started!</h1>
+              
+            <% end %>
+            <div>
+                <%= link_to "+", new_task_path(plant_id: @plant.id), class: "btn btn-outline-info new-task-btn"%>
+            </div>
         </div>
+
             <div class="d-flex justify-content-start flex-wrap ">
             
-                <% @plant.tasks.each do |task|%>
+                <% @plant.tasks.reverse.each do |task|%>
                     <div class="task-btn w-auto">
-                        <div class="col btn task <%= task.time_left == "Overdue." ? "btn-outline-danger" : "btn-outline-info" %>" >
-                        <h1>Task:</h1>
+                        <div class="col btn task btn-outline-info <%= "overdue-btn" if task.time_left == "Overdue." %>" >
+                        <h5>Task:</h5>
                             <%= link_to task.name, task, method: :patch, class: "task-name" %>
                             <hr id="taskline">
                             
