@@ -5,6 +5,7 @@
           <h4><strong>Komorebi</strong></h4> 
     </a>
   </div>  
+   
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" href="/home">
           More
@@ -57,7 +58,9 @@
               </div>
             </div>
           </div>
+           <a class="button is-success"> User: <%= current_user.username %></a>
           <button type="button" class="button is-success"><%= link_to "Log Out", logout_path, method: :delete %></button>
+
           <div class="navbar-end">
           </p>
           </p>
