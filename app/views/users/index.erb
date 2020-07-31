@@ -1,19 +1,39 @@
-  <section class="hero hero-body is-success">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        🌱Homies🌱
-      </h1>
-      
-        <br>
-        <% @users.each do |user| %>
-        <h1 class="subtitle">
-        
-        Gardener Username: <%= link_to user.username, garden_path(user) %><br>
+  <div>
+    <section class="hero hero-body is-success">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          🌱Homies🌱
         </h1>
-        <% end%>
-        <br>
-      </h2>
+        </h2>
+      </div>
     </div>
+  </section>
+<br>
+  <div class="d-flex justify-content-between">
+         </h1>
+        
+          <br>
+          <% @users.each do |user| %>
+          <h1 class="subtitle">
+          
+                <div class="card" style="width: 18rem;">
+                <img alt="Plant | Plant doodle, Motion graphics gif, Animation design" class="n3VNCb" src="https://i.pinimg.com/originals/e8/88/d4/e888d4feff8fd5ff63a965471a94b874.gif" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd,gvK6lb;" style="width: 400px; height: 300px; margin: 0px;" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">Gardener Username: <br>
+                  <%= link_to user.username, garden_path(user) %></p>
+                </div>
+              </div>
+         
+          </h1>
+          <% end%>
+          <br>
+        </h2>
   </div>
-</section>
+
+
+
+
+
+
+</div>

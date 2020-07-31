@@ -13,5 +13,13 @@ class User < ApplicationRecord
     
         self.garden = Garden.create(garden_name: param['garden_name'], user_id: self.id)
     end
+
+    def self.other_users(userCurrent)
+        # return an array where the current user is not in it
+        
+        self.all.select do |user|
+            user.id != userCurrent.id
+        end
+    end
   
 end
