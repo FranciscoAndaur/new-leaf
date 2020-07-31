@@ -6,6 +6,7 @@
 
 
 <div id="login">
+<<<<<<< HEAD
   <div class="login-card ">
    <div class="notification is-danger">
   <button class="delete"></button>
@@ -14,22 +15,45 @@
     <div class="card-title">
       <h1>Please Sign In</h1>
     </div>
+=======
+>>>>>>> netalys
 
-    <div class="content">
-      <form action="/login" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="qiF7zh0pJalih68sLCBX31o6alwtPCgl0/tKcvPma8oVubQ8MCpBjk94rwrZOwvN4ncfxxC1+NGdkWf4TqNXFg==" />
+      <div class="login-card justify-content-center text-center">
+                 <div class="notification is-danger">
+                      <h1>🍃</h1>
+                      <button class="delete"></button>
+                      <a> <%= flash[:notice] %></a>
+                </div>
+                <div class="card-title">
+                  <h1>Please Sign In</h1>
+                </div>
 
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" />
-    <label for="password">Password (8 characters minimum)</label>
-    <input type="password" name="password" id="password" />
+                <div class="content">
+                    
+                        <form action="/login" accept-charset="UTF-8" method="post">
+                        <input type="hidden" name="authenticity_token" value="qiF7zh0pJalih68sLCBX31o6alwtPCgl0/tKcvPma8oVubQ8MCpBjk94rwrZOwvN4ncfxxC1+NGdkWf4TqNXFg==" />
+                         
+                        
+                            <input type="text" name="username" id="username" placeholder= "User Name"/>
+                         
+                  
+                         
+                            <input type="password" name="password" id="password" placeholder= "Password" />
+                        
+                            <div class="level options">
+                              <div class="checkbox level-left">
+                                  <input type="checkbox" id="checkbox" class="regular-checkbox">
+                                  <label for="checkbox">></label>
+                                  <span>I Am The Best</span>
+                              <a class="btn btn-link level-right" href="/users/new">Register</a>
+                            </div>
 
-
-        <div class="level options">
-          <a class="btn btn-link level-right" href="/users/new">Register</a>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
-    </div>
-  </div>
+                          <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                      
+                </div>
+      </div>
 </div>
+
+
+
