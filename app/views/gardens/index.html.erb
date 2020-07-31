@@ -14,38 +14,38 @@
         <h1 class="hero title">
         <h2 class="hero subtitle">
         <div class="headerNav">
-        Plant a seed: <button class="button is-link"><%=link_to "🌱",new_plant_path, method: :get %></button>
+          <span>Plant a seed: <%=button_to "🌱",new_plant_path, method: :get, class: "button is-link"%></span>
         </div>  
-        <br>
         <br>
         Add Some Plants!
         <hr>
-        🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
-        <br>
-        <br>
-
-<div class="row row-cols-4 justify-content-between">
-
-  <% @garden.plants.each do |p|%>
-     <div class="d-flex flex-column btn-custom">
-        <a href="/plants/<%="#{p.id}"%>" class="btn btn-custom">
-           <%= p.nickname%> <br>
-            Plant Name:<%= p.plant_type %> 
-            <br> 
-        </a>
-        
-        <%= link_to "rip", p, method: :delete, class: "btn btn-custom"%>
-
-      </div>
-     
-  <% end %>
-</div>
-
-
-        <br>
+         🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀
+       
       </h2>
     </div>
   </div>
 </section>
+
+<div class="d-flex justify-content-center flex-wrap">
+    <% @garden.plants.each do |p|%>
+      <div class="task-btn w-auto">
+          <div class="col btn task btn-outline-success">
+              <a href="/plants/<%="#{p.id}"%>" class="btn btn-custom">
+                🌱<br>
+                <span><small>Nickname:</small></span>
+                <small><b><%= p.nickname.capitalize%></b></small><br>
+                <hr>
+                <span><small>Plant Type:</small></span>
+                <small><i><%= p.plant_type.capitalize %></i></small>  
+              </a><br>
+
+              <%= link_to "🗑", p, method: :delete, class: "trash"%>
+          </div>
+        </div>
+      
+    <% end %>
+</div>
+
+
 
 

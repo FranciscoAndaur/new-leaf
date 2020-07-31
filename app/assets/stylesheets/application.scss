@@ -23,6 +23,10 @@
    border-radius: 25px
  }
 
+ .form-group {
+    margin: 0 3em !important;
+ }
+
  .form-control {
     border-color: #1f9aaf !important;
  }
@@ -76,15 +80,16 @@ body.home {
 .btn-custom {
    border-style: solid;
    border-color: #21944d;
+   color: #13552c !important;
 }
 
 th {
    color: white !important;
-   padding: 0 15px 0 15px !important;
+   padding: 8px 15px 8px 15px !important;
 }
 
 td {
-   padding: 0 15px 0 15px !important;
+   padding: 8px 15px 8px 15px !important;
 
 }
 
@@ -130,6 +135,7 @@ td {
    background-color: #48c774;
 
 }
+
 
 .overdue-btn {
    color: #dc3545 !important;

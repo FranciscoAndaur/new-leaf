@@ -11,22 +11,29 @@
 
 
 
-<div class= "form">
+<div class= "form text-center" >
+<br>
 <%= form_for @plant do |f| %>
     <%= f.hidden_field :garden_id, value: "#{current_user.garden.id}" %>
-    <%= f.label :plant%>
-    <%= f.text_field :plant_type %> 
+    <div class="form-group">
+        <%= f.label :plant%>
+        <%= f.text_field :plant_type, class: "form-control" %> 
+    </div>
+    <div class="form-group">
+        <%= f.label :nickname%>
+        <%= f.text_field :nickname, class: "form-control" %> 
+    </div>
+    <div class="form-group">
+        <%= f.label :size_in_inches%>
+        <%= f.number_field :size, class: "form-control", placeholder: "inch" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :amount_of_water%>
+        <%= f.number_field :water_ammount, class: "form-control", placeholder: "cup"%> 
+    </div>
     <br>
-    <%= f.label :nickname%>
-    <%= f.text_field :nickname %> 
-    <br>
-    <%= f.label :size_in_inches%>
-    <%= f.number_field :size %> inch
-    <br>
-    <%= f.label :amount_of_water%>
-    <%= f.number_field :water_ammount %> cup
-    <br>
-    <br>
-    <%= f.submit "Plant Seed" %>
+    <%= f.submit "Plant Seed", class: "btn btn-outline-info"%>
 <% end %>
+<br>
 </div>
