@@ -1,47 +1,57 @@
-<div class= "plantpage">
-    <div class="d-flex justify-content-around">
-    <h1>Name: <%= @plant.nickname %></h1>
-    <h1>Type: <%= @plant.plant_type%></h1>
+<div class=" d-flex justify-content-between border">
+    <div class="d-flex flex-column plant-data">
+       <table class="table-bordered table-dark">
+            <tr>
+                <th scope="row">Nick Name: </th>
+                <td> <%= @plant.nickname %></td>
+            </tr>
+            <tr>
+                <th>Type: </th>
+                <td><%= @plant.plant_type %></td>
+            </tr>
+            <tr>
+                <th>Size: </th>
+                <td><%= @plant.plant_type %></td>
+            </tr>
+            <tr>
+                <th id="care"> Care:
+               
+                <p id="care-attr"> *water amount</p>
+                </th>
+                <td><%= @plant.water_ammount %></td>
+            </tr>
+       </table>
     </div>
-    <br>
-    <div class="d-flex justify-content-around">
-    <h1>Size: <%= @plant.size %> inch</h1>
-    <h1>Water: <%= @plant.water_ammount %> cups</h1>
+
+    <div class="d-flex flex-column w-100 task-box-container ml-5">
+        <div class="d-flex justify-content-end new-task"> 
+
+            <%= link_to "+", new_task_path(plant_id: @plant.id), class: "btn btn-outline-info new-task-btn"%>
+        </div>
+            <div class="d-flex justify-content-start flex-wrap ">
+            
+                <% @plant.tasks.each do |task|%>
+                    <div class="task-btn w-auto">
+                        <div class="col btn task <%= task.time_left == "Overdue." ? "btn-outline-danger" : "btn-outline-info" %>" >
+                        <h1>Task:</h1>
+                            <%= link_to task.name, task, method: :patch, class: "task-name" %>
+                            <hr id="taskline">
+                            
+                            <span><small>Frequency:</small></span>
+                            <small><%= task.interval %><br></small>
+                            <span><small>Time Left:</small></span>
+                            <small><%= task.time_left %></small>
+                            <%= button_to  "🗑", task, method: :delete, class: "trash"%>
+                        
+                        </div>
+                    </div>
+                <% end %>
+            </div>
     </div>
+
+
 </div>
-    
-<div class= "taskbutton">
-    <%= link_to "New Task", new_task_path(plant_id: @plant.id) %>
-</div>
-
-<section class="hero is-link">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="hero title">
-      <h2 class="hero subtitle">
-        Tasks:  
 
 
-<div class="d-flex justify-content-between flex-wrap">
 
 
-<% @plant.tasks.each do |task|%>
-<br>
- <br><div class="width-20 rounded-lg box hero is-success">
-    <%= button_to task.name, task, method: :patch, class: "btn btn-success" %>
-    <span><small>Frequency:</small></span>
-    <small><%= task.interval %><br></small>
-    <span><small>Time Left:</small></span>
-    <small><%= task.time_left %></small>
-    
-    <%= button_to  "   ", task, method: :delete, class: "border"%>
-    </div>
-<br>
-<br>
-<% end %>
-</div>
-        </h1>
-      </h2>
-    </div>
-  </div>
-</section>

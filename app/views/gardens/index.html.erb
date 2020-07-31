@@ -4,7 +4,6 @@
     <div class="container">
       <h1 class="hero title">
       <h2 class="hero subtitle">
-
         Garden Name:  <%= @garden.garden_name %>
         <h1 class="hero title">
         <h2 class="hero subtitle">
@@ -24,16 +23,25 @@
         🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
         <br>
         <br>
+
 <div class="row row-cols-4 justify-content-between">
 
-<% @garden.plants.each do |p|%>
+  <% @garden.plants.each do |p|%>
+     <div class="d-flex flex-column btn-custom">
+        <a href="/plants/<%="#{p.id}"%>" class="btn btn-custom">
+           <%= p.nickname%> <br>
+            Plant Name:<%= p.plant_type %> 
+            <br> 
+        </a>
+        
+        <%= link_to "rip", p, method: :delete, class: "btn btn-custom"%>
 
-  <div class="col border rounded-lg box hero is-success">
-    <%= link_to p.plant_type, p %> || <%= p.nickname %> 
-    <%= link_to "rip", p, method: :delete %>
-  </div>
- 
-<% end %>
+      </div>
+     
+  <% end %>
+</div>
+
+
         <br>
       </h2>
     </div>

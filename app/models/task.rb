@@ -12,7 +12,9 @@ class Task < ApplicationRecord
   def interval_days
     case self.interval
     when "daily"
-      1.day
+      # change to 1.day
+      # change for test to 5 seconds to show the red lines
+      5.second
     when "weekly"
       7.day
     when "bi-weekly"
@@ -28,7 +30,7 @@ class Task < ApplicationRecord
         if hours < 1
           if minutes < 1
             if seconds < 1
-              "Overdue."
+               return "Overdue."
             else
               "#{seconds} second#{"s" if seconds > 1}"
             end
