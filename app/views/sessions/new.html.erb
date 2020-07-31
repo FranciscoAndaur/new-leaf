@@ -6,10 +6,12 @@
 
 
 <div id="login">
+
       <div class="login-card justify-content-center text-center">
-                <div class="notification is-danger">
+                 <div class="notification is-danger">
+                      <h1>🍃</h1>
                       <button class="delete"></button>
-                      <a><%= flash[:notice] %></a>
+                      <a> <%= flash[:notice] %></a>
                 </div>
                 <div class="card-title">
                   <h1>Please Sign In</h1>
@@ -20,13 +22,12 @@
                         <form action="/login" accept-charset="UTF-8" method="post">
                         <input type="hidden" name="authenticity_token" value="qiF7zh0pJalih68sLCBX31o6alwtPCgl0/tKcvPma8oVubQ8MCpBjk94rwrZOwvN4ncfxxC1+NGdkWf4TqNXFg==" />
                          
-                           
+                        
                             <input type="text" name="username" id="username" placeholder= "User Name"/>
                          
-                        
-                            <label for="password">Password (8 characters minimum)</label>
+                  
                          
-                            <input type="password" name="password" id="password" />
+                            <input type="password" name="password" id="password" placeholder= "Password" />
                         
                             <div class="level options">
                               <div class="checkbox level-left">

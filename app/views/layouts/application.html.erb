@@ -22,10 +22,14 @@
 
     <%= yield %>
 
-        <div class="bg-img">
+        <%# <div class="bg-img">
           <%= (image_tag "home/original.jpg") unless current_page?(gardens_path) || current_page?(new_plant_path) %>
-        </div>
-            
+        
+        </div>  %>
+
+          <%# <div class="bg-img">
+          <%= (image_tag "home/original.jpg") unless current_page?(gardens_path) || current_page?(new_plant_path) %>
+      </div> %>
   </body>
   
   <footer class="footer">
