@@ -2,108 +2,95 @@
 
 <nav id="navbar" class="bd-navbar navbar has-shadow is-success">
   <div class="container">
-  <div class="navbar-menu">
-    <a class="navbar-item" >
-          <h4><strong>Komorebi</strong></h4> 
-    </a>
-  </div>  
-      <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-menu">
+            <a class="navbar-item btn" href= "<%= gardens_path %>">
+                  <h4><strong>Komorebi</strong></h4> 
+            </a>
+          </div>  
+      <div class="navbar-item has-dropdown is-hoverable btn">
         
-        <a class="navbar-link" href="/home">
+      <a class="navbar-link">
           More
-        </a>
-
-        <div id="moreDropdown" class="navbar-dropdown">
-          <a class="navbar-item is-hidden-widescreen" href="https://github.com/jgthms/bulma" target="_blank">
+          </a>
+            <div id="moreDropdown" class="navbar-dropdown">
+              <a class="navbar-item is-hidden-widescreen" href="https://github.com/jgthms/bulma" target="_blank">
             
           </a>
 
           <hr class="navbar-divider is-hidden-widescreen">
-
-          
+      </a>
+ 
             
-            
-            </a>
-         
-              
-            
-          
-            
-            <a class="navbar-item  " href="/users">
-              <span>
-                
-                <strong>Users</strong>
-                <br>
-                View all the users
-              </span>
-            </a>
+                <a class="navbar-item  " href="/users">
+                  <span>
+                    
+                    <strong>Users</strong>
+                    <br>
+                    View all the users
+                  </span>
+                </a>
             
               <hr class="navbar-divider ">
             
           
             
-            <a class="navbar-item  " href="/gardens">
-              <span>
-                
-                <strong>Garden</strong>
-                <br>
-                Visit your garden.
-              </span>
-            </a>
-            
-              <hr class="navbar-divider ">
-            
-          
-            
-            <a class="navbar-item  " href="/plants/new">
-              <span>
-                
-                <strong>Seed</strong>
-                <br>
-                Plant a seed form.
-              </span>
-            </a>
-            
-              <hr class="navbar-divider ">
-            
-          
-            
-            <a class="navbar-item  " href="/settings">
-              <span>
-                
-                <strong>Settings</strong>
-                <br>
-                User Settings
-              </span>
-            </a>
-            
-              <hr class="navbar-divider ">
-            
-          
-            
-            <a class="navbar-item  " href="/rails/info">
-            
-              <span>
-                <span class="icon has-text-success">
+                <a class="navbar-item" href="/gardens">
                   
-                </span>
-              
-                <strong>PATHS</strong>
-                <br>
-                
-              </span>
-              </a>
+                    
+                   <span> <strong>Garden</strong><span>
+                    <br>
+                   Visit "<%= current_user.garden.garden_name %>"
+                  
+                </a>
+            
+              <hr class="navbar-divider ">
+            
+          
+            
+                <a class="navbar-item" href="/plants/new">
+                  <span>
+                    
+                    <strong>Seed</strong>
+                    <br>
+                    Plant a seed
+                  </span>
+                </a>
+            
+              <hr class="navbar-divider ">
+            
+          
+            
+                <a class="navbar-item  " href="/settings">
+                  <span>
+                    
+                    <strong>Settings</strong>
+                    <br>
+                    User Settings
+                  </span>
+                </a>
+            
+              <hr class="navbar-divider ">
+            
+          
+            
+                  <a class="navbar-item  " href="/rails/info">
+                  
+                    <span>
+                      <span class="icon has-text-success">
+                        
+                      </span>
+                    
+                      <strong>PATHS</strong>
+                      <br>
+                      
+                    </span>
+                    </a>
               </div>
             </div>
           </div>
-          
-          <button type="button" class="button is-success"><%= link_to "Log Out", logout_path, method: :delete %></button>
-          <div class="navbar-end">
-          </p>
-          </p>
-        </div>
+          <div> 
+          <%= button_to "Log Out", logout_path, method: :delete,class: "button is-success"%>
+         </div>
       </div>
-    </div>
-  </div>
   </div>
 </nav>
