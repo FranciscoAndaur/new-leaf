@@ -13,12 +13,14 @@
         Current Plant Population:  <%= @garden.plant_population %></h1>
         <hr>
         🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🐢🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳🌱🌿🍃🍀🌳
-<div class="plant">
+<div class="row row-cols-4 justify-content-between">
 
 <% @garden.plants.each do |p|%>
-
-   <%= p.plant_type  %> || <%= p.nickname %> 
-   
+ <div class="col border rounded-lg box hero is-success">
+ <span><small>Plant:</small> <%= p.plant_type  %> </span>
+   <span><small>Nick Name:</small><%= p.nickname %> </span>
+  </div>
+ 
 <% end %>
         <br>
       </h2>
