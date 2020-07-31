@@ -19,6 +19,8 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
@@ -27,4 +29,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-  

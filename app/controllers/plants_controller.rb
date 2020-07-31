@@ -2,10 +2,11 @@ class PlantsController < ApplicationController
     before_action :find_plant, only: [:show, :edit, :update, :destroy]
     def new
         @plant = Plant.new
+        
     end
 
     def show
-    
+        @task = Task.new
     end
 
     def create
