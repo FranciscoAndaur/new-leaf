@@ -290,7 +290,9 @@ button:focus {
 }
 
 .glyphicon-heart:before {
-    content: "\e005";
+	content: "♥";
+	margin-right: 4px;
+	margin-left: 2px;
 }
 
 :after, :before {
