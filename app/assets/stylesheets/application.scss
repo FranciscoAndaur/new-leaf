@@ -15,12 +15,16 @@
  @import "bootstrap";
 
  .form{
- 
    border-style: solid;
-   background-color: rgb(255, 243, 70);
-   border-radius: 5px;
-   padding: 3em;
-   opacity: 50%;
+   border-radius: 1px;
+   opacity: 68%;
+   border-color: #1f9aaf;
+   margin: 5em 34em;
+   border-radius: 25px
+ }
+
+ .form-control {
+    border-color: #1f9aaf !important;
  }
  
  .header{

@@ -1,0 +1,43 @@
+
+<div class="text-center">
+        <div style="margin: 0 30em;">
+                <% if @task.errors.any? %>
+                        <% @task.errors.full_messages.each do |m|%>
+                                <div class="notification is-info is-light" style="padding: 0.3em 2em; margin-bottom: 1em;">
+                                <button class="delete"></button>
+                                <%= m %><br>
+                                </div>
+                        <% end%>
+                <% end%>
+        </div>
+
+        <div class="text-center form">
+        <br>
+                <h1>New Task</h1>
+                <hr>
+                <%= form_with model: @task, local: true do |f|%>
+                
+                <div class="form-group text-center" style="margin: 0 3em;" >
+                        <%= f.label :name %>
+                        <%= f.text_field :name, class: "form-control"%><br>
+                </div>
+
+                <div class="form-group" style="margin: 0 3em;" >
+                        <%= f.label :interval %>
+                        <select name="interval" class="form-control">
+                                <option value=daily>Daily</option>
+                                <option value=weekly>Weekly</option>
+                                <option value=bi-weekly>Bi-Weekly</option>
+                                <option value=monthly>Monthly</option>
+                        </select><br>
+                </div>
+
+                        <%= f.hidden_field :user_id, value: current_user.id %>
+                        <%= f.hidden_field :plant_id, value: params[:plant_id] %>
+                
+                        <%= f.submit class: 'btn btn-outline-info' %>
+                
+                <% end %>
+                        <br>
+        </div>
+</div> 
